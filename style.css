@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Cormorant+Garamond:ital@1&family=Josefin+Sans&family=Kumbh+Sans:wght@400;700&family=League+Spartan:wght@700&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Poppins&family=Space+Grotesk&display=swap');
+
+/* CSS reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Css GLOBAL variables */
+
+:root{
+    --body-background: hsl(222, 26%, 31%);
+    --keypad-background: hsl(223, 31%, 20%);
+    --screen-background: hsl(224, 36%, 15%);
+    --reset-shadow: hsl(224, 28%, 35%);
+    --reset-background: hsl(225, 21%, 49%);
+    --equal-to-bg: hsl(6, 63%, 50%);
+    --equal-to-shadow: hsl(6, 70%, 34%);
+    --key-bg: hsl(30, 25%, 89%);
+    --key-shadow: hsl(28, 16%, 65%);
+    --key-text: hsl(221, 14%, 31%);
+    --special-text: hsl(0, 0%, 100%);
+    --other-color: hsl(0, 0%, 100%);
+    --font-weight: 900;
+}
+
+.theme2{
+    --body-background: hsl(0, 0%, 90%);
+    --keypad-background: hsl(0, 5%, 81%);
+    --screen-background: hsl(0, 0%, 93%);
+    --reset-shadow: hsl(185, 42%, 37%);
+    --reset-background: hsl(185, 58%, 25%);
+    --equal-to-bg: hsl(25, 98%, 40%);
+    --equal-to-shadow: hsl(25, 99%, 27%);
+    --key-bg: hsl(45, 7%, 89%);
+    --key-shadow: hsl(35, 11%, 61%);
+    --key-text: hsl(60, 10%, 19%);
+    --special-text: hsl(0, 0%, 100%);
+    --font-weight: 900;
+    --other-color: hsl(60, 10%, 19%);
+}
+
+.theme3{
+  --body-background: hsl(268, 75%, 9%);
+  --keypad-background: hsl(268, 71%, 12%);
+  --screen-background: hsl(268, 71%, 12%);
+  --reset-shadow: hsl(290, 70%, 36%);
+  --reset-background: hsl(268, 47%, 21%);
+  --equal-to-bg: hsl(176, 100%, 44%);
+  --equal-to-shadow: hsl(177, 92%, 70%);
+  --key-bg: hsl(281, 89%, 26%);
+  --key-shadow: hsl(285, 91%, 52%);
+  --key-text: hsl(52, 100%, 62%);
+  --special-text: hsl(0, 0%, 100%);
+  --other-color: hsl(52, 100%, 62%);
+  --font-weight: 900;
+}
+
+body, html{
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  background: var(--body-background);
+  transition: all 0.5s ease;
+  font-family: 'League Spartan', sans-serif;
+}
+
+input{
+  outline: none;
+  width: 60px;
+  height: 30px;
+  border-radius: 7px;
+  margin: 7px 5px;
+  text-align: center;
+  border: none;
+  background: var(--key-bg);
+  box-shadow: 0 3px 0 var(--key-shadow); 
+  cursor: pointer;
+  color: var(--key-text);
+  font-weight: var(--font-weight);
+  transition: all 0.5s ease;
+  /* outline: none; */
+}
+
+input:hover{
+  background: var(--reset-background);
+}
+
+input.lg{
+  width: 134px;
+}
+
+.result-display{
+  background: var(--screen-background);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  transition: all 0.5s ease;
+}
+
+.result-display input{
+  width: 282px;
+  text-align: right;
+  /* padding: 20px; */
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  box-shadow: none;
+  
+}
+
+.buttons{
+  margin-top: 10px;
+  background: var(--keypad-background);
+  border-radius: 7px;
+  transition: all 0.5s ease;
+  
+}
+
+.result-display, .buttons{
+  padding: 10px;
+}
+
+.reset{
+  background: var(--reset-background);
+  box-shadow: 0 3px 0 var(--reset-shadow);
+  color: var(--special-text);
+}
+
+.reset:hover{
+  opacity: 0.6;
+}
+
+.equal{
+  background: var(--equal-to-bg);
+  box-shadow: 0 3px 0 var(--equal-to-shadow);
+  color: var(--special-text);
+}
+
+.equal:hover{
+  opacity: 0.6;
+}
+
+.toggle-bar{
+  width: 312;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: var(--other-color);
+}
+
+.theme{
+  display: flex;
+}
+
+.toggle-theme{
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.theme-number{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.switch{
+  width: 100%;
+  height: 18px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  transition: padding 0.5s ease;
+}
+
+.switcher{
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--equal-to-bg);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.theme{
+  font-size: 8px;
+  gap: 20px;
+}
+
+.theme-title{
+  align-self: flex-end;
+}
+
+@media screen and (max-width: 375px) {
+  
+}
